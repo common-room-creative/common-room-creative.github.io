@@ -56,8 +56,8 @@ h1,h2,h3,h4,h5
 /* start all section */
 #work, #about, #portfolio, #contact
     {
-        padding-top: 144px;
-        padding-bottom: 172px;
+        padding-top: 4vw;
+        padding-bottom: 12vw;
     }
 /* end all section */
 
