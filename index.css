@@ -400,4 +400,14 @@ footer button:hover {
   transition: 152ms;
   cursor: pointer; 
 }
+
+p a { 
+  color: var(--color-text); 
+  text-decoration: none; 
+ }
+
+ p a:hover { 
+  color: var(--color-text-secondary); 
+  text-decoration: underline;
+  }
 /* END footer */
