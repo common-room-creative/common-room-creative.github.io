@@ -1,11 +1,5 @@
 /* import */
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Rubik&display=swap");
-/* 
-  font-family: 'Rubik', sans-serif;
-    font-family: 'Lato', sans-serif;
-*/
-
-/* END import */
 
 /* variables */
 :root {
@@ -15,20 +9,36 @@
   --color-secondary: #d43f52;
   --color-accent: #454ade;
   --color-text: #f6f7eb;
-  --color-text-secondary: #999999;
+  --color-text-secondary: #cecece;
   /* typefaces */
   --text-heading: "Rubik", sans-serif;
   --text-copy: "Lato", sans-serif;
+  /* layout spacing */
+  --margin: 1rem;
+  --modifier: calc(40rem - 100%);
 }
 
-/* * { 
-  overflow-x: hidden; 
- } */
-/* END variables */
+/* screen reader-only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* vintage IE */
+  clip: rect(1px, 1px, 1px, 1px);
+  border: 0;
+}
 
 /* general */
 html {
   background-color: var(--color-main);
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -40,53 +50,53 @@ h4 {
   letter-spacing: 0.75%;
 }
 
-p {
+p,
+li {
   font-family: "Lato", sans-serif;
   color: var(--color-text);
   font-size: 1rem;
-  line-height: 1.5; 
+  line-height: 1.5;
 }
 
 h1 {
   font-size: 2.25rem;
+  text-align: center;
 }
 
 h2 {
   font-size: 2rem;
+  text-align: center;
 }
 
 h3 {
   font-size: 1.5rem;
 }
 
-/* .wrapper {
-  flex-flow: row wrap; 
-  justify-content: center;
-} */
-
-body {
-  margin: 0;
-  padding: 0;
+/* layout */
+.section-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--margin) * -1) 0.5rem;
+  padding: 1rem;
+  overflow-x: hidden;
 }
-/* END general */
 
 /* header */
-.header-background {
+header {
   overflow: hidden;
   background: url("../images/home-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
   min-width: 100vw;
+}
+
+.header {
+  padding: 8%;
   text-align: center;
 }
 
-.header-text {
-  padding: 8%;
-}
-
-
-.header-text h1 {
+.header h1 {
   display: inline-block;
   color: var(--color-secondary);
   padding: 1rem 3rem;
@@ -94,79 +104,55 @@ body {
   letter-spacing: 0.25rem;
 }
 
-.header-text h3,
-.header-text h2 {
-  color: var(--color-text);
-}
-
-.header-text p {
+.header p {
   color: var(--color-text-secondary);
   letter-spacing: 0.025rem;
-  font-size: 1.25rem; 
-
+  font-size: 1.25rem;
 }
 
-.header-text button,
-.header-text button {
+.header .faux-heading {
+  color: var(--color-text);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.move-focus {
+  display: inline-block;
+  font-family: "Lato", sans-serif;
   font-size: 1.25rem;
-  background-color: rgba(0, 0, 0, 0);
   color: var(--color-text);
   border: 2px solid var(--color-text);
   padding: 1rem 3rem;
   margin: 3rem;
   border-radius: 0.25rem;
-  cursor: pointer; 
+  text-decoration: none;
 }
 
-.header-text button:hover {
+.move-focus:hover {
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);
   transition: 152ms;
 }
-/* END header */
 
 /* process */
 .process {
   min-height: 50vh;
   background-color: var(--color-main);
   padding: 3rem 6vw;
-  min-height: 50vh;
 }
 
-.process h2 {
-  text-align: center;
-}
-
-.process-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  --margin: 1rem;
-  --modifier: calc(40rem - 100%);
-  margin: calc(var(--margin) * -1) 0.5rem;
-  padding: 1rem;
-  overflow-x: hidden;
-}
-
-.process-wrapper > * {
+.process .section-wrapper > * {
   flex-grow: 1;
   flex-basis: calc(var(--modifier) * 999);
   margin: var(--margin);
   padding: 0.5rem;
 }
 
-.process-wrapper p {
+.process p {
   color: var(--color-text-secondary);
 }
 
-.icon::before {
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-}
-
-.process-wrapper #understand h3::before {
+.process #understand h3::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f109";
@@ -174,7 +160,7 @@ body {
   padding: 1rem 1rem 1rem 0;
 }
 
-.process-wrapper #ideate h3::before {
+.process #ideate h3::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f53f";
@@ -182,7 +168,7 @@ body {
   padding: 1rem 1rem 1rem 0;
 }
 
-.process-wrapper #test h3::before {
+.process #test h3::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f121";
@@ -190,41 +176,32 @@ body {
   padding: 1rem 1rem 1rem 0;
 }
 
-/* END process */
-
+/* TODO */
 /* do */
+
 .do {
   background-color: var(--color-break);
-  padding: 3rem 6vw;
   min-height: 50vh;
+  padding: 3rem 6vw;
 }
 
-.do h2 {
-  text-align: center;
-}
-
-.do-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  --margin: 1rem;
-  --modifier: calc(40rem - 100%);
-  margin: calc(var(--margin) * -1) 0.5rem;
-  padding: 1rem;
-  overflow-x: hidden;
-}
-
-.do-wrapper > * {
+.do .section-wrapper > * {
   flex-grow: 1;
   flex-basis: calc(var(--modifier) * 999);
   margin: var(--margin);
-  padding: 0.75rem;
+  padding: 0.5rem;
 }
 
-.do-wrapper h3 {
+.do h3 {
   color: var(--color-secondary);
 }
 
-.do .do-services .break {
+.do ul li {
+  list-style-type: none;
+  padding: 1rem 0;
+}
+
+.do ul .break {
   content: "";
   border: 2px solid var(--color-secondary);
   background-color: var(--color-secondary);
@@ -234,90 +211,65 @@ body {
   margin-right: 0.5rem;
   border-radius: 0.25rem;
 }
-/* END do */
 
-/* clients */
-.client {
-  padding: 3rem 6vw;
+/* clients  */
+.clients {
   min-height: 50vh;
-}
+  padding: 3rem 6vw
+} 
 
-.client h2 {
+.image-list-wrapper ul {
+  padding: 1rem;
+  margin: 1rem; 
+  list-style-type: none;
   text-align: center;
 }
 
-.client-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  --margin: 1rem;
-  --modifier: calc(40rem - 100%);
-  margin: calc(var(--margin) * -1) 0.5rem;
-  padding: 1rem;
-  overflow-x: hidden;
+.image-list-wrapper li {
+  display: inline-block; 
+  padding: 1rem; 
 }
 
-.client-wrapper > * {
-  flex-grow: 1;
-  flex-basis: calc(var(--modifier) * 999);
-  margin: var(--margin);
-  /* background-color: var(--color-accent);  */
-  padding: 0.75rem;
+.clients img {
+  min-width: 16vw;
 }
-
-.client-item {
-  display: flex;
-  justify-content: center;
-}
-
-.client-wrapper img {
-  max-width: 75%;
-  justify-items: center;
-}
-
-/* END clients */
 
 /* contact */
 .contact {
-  padding: 3rem 6vw;
-  min-height: 50vh;
   background-color: var(--color-break);
+  min-height: 50vh;
+  padding: 3rem 6vw;
 }
 
-.contact h2 {
-  text-align: center;
-}
-
-.contact-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  --margin: 1rem;
-  --modifier: calc(40rem - 100%);
-  margin: calc(var(--margin) * -1) 0.5rem;
-  padding: 1rem;
-  overflow-x: hidden;
-  justify-content: center; 
-}
-
-.contact-wrapper > * {
+.contact .section-wrapper > * {
   flex-grow: 1;
   flex-basis: calc(var(--modifier) * 999);
   margin: var(--margin);
-  /* background-color: var(--color-accent);  */
-  padding: 2rem;
+  padding: 0.5rem;
 }
 
-.contact-details { 
+.contact-details ul { 
   align-self: center; 
   justify-self: center; 
-  padding-left: 8%; 
+  list-style-type: none; 
 }
 
-.contact-wrapper p { 
-  font-family: var(--text-copy);
-  font-size: 1.125rem; 
+.contact-details li { 
+  padding: .5rem 0; 
 }
 
-.contact-form label {
+.contact-details li a { 
+  color: var(--color-text); 
+  text-decoration: none; 
+ }
+
+ .contact-details a:hover { 
+   color: var(--color-text-secondary);
+   text-decoration: underline; 
+ }
+
+ /* contact form  */
+ .contact-form label {
   color: var(--color-text);
   font-family: var(--text-copy);
   margin-top: 4rem; 
@@ -347,8 +299,6 @@ body {
   font-size: 1rem; 
 }
 
-
-
 .contact-form button {
   border-radius: 0.5rem;
   min-width: 24%;
@@ -370,10 +320,9 @@ body {
   transition: 152ms;
   cursor: pointer; 
  }
-/* END contact */
 
-/* footer */
-footer {
+ /* footer  */
+ footer {
   text-align: center;
   background-color: var(--color-break);
   padding: 2.5rem;
@@ -382,32 +331,3 @@ footer {
 footer p {  
   color: var(--color-text-secondary); 
 }
-
-footer button {
-  font-size: 1rem;
-  background-color: rgba(0, 0, 0, 0);
-  color: var(--color-text);
-  border: 2px solid var(--color-text);
-  padding: 1rem 3rem;
-  margin: 3rem;
-  border-radius: 0.25rem;
-  text-decoration: none; 
-}
-
-footer button:hover {
-  background-color: var(--color-secondary);
-  border-color: var(--color-secondary);
-  transition: 152ms;
-  cursor: pointer; 
-}
-
-p a { 
-  color: var(--color-text); 
-  text-decoration: none; 
- }
-
- p a:hover { 
-  color: var(--color-text-secondary); 
-  text-decoration: underline;
-  }
-/* END footer */

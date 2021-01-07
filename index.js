@@ -1,5 +1,8 @@
 const headerButton = document.getElementById("header-button");
 const footerButton = document.getElementById("footer-button");
+
+const contactSection = document.getElementById("contact");
+const commonRoom = document.getElementById("common-room"); 
 const formInput = document.getElementById("form-name"); 
 
 const moveFocus = (btn) => {
@@ -9,11 +12,11 @@ const moveFocus = (btn) => {
 };
 
 headerButton.addEventListener("click", () => {
-  formInput.scrollIntoView({ behavior: "smooth" });
-  moveFocus(formInput); 
+  contactSection.scrollIntoView({ behavior: "smooth" });
+  moveFocus(contactSection); 
 });
 
 footerButton.addEventListener("click", () => {
-  headerButton.scrollIntoView({ behavior: "smooth" });
-  moveFocus(headerButton); 
+  commonRoom.scrollIntoView({ behavior: "smooth" });
+  moveFocus(commonRoom); 
 });
