@@ -41,6 +41,14 @@ body {
   padding: 0;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {  
+  outline: .25rem dashed var(--color-secondary);
+  outline-offset: .25rem;
+}
+
 h1,
 h2,
 h3,
