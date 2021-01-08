@@ -1,9 +1,8 @@
-const headerButton = document.getElementById("header-button");
-const footerButton = document.getElementById("footer-button");
+const headerButton = document.getElementById("header-link");
+const footerButton = document.getElementById("footer-link");
 
 const contactSection = document.getElementById("contact");
 const commonRoom = document.getElementById("common-room"); 
-const formInput = document.getElementById("form-name"); 
 
 const moveFocus = (btn) => {
   setTimeout(() => {
@@ -11,12 +10,14 @@ const moveFocus = (btn) => {
   }, 1000);
 };
 
-headerButton.addEventListener("click", () => {
+headerButton.addEventListener("click", (e) => {
+  e.preventDefault();
   contactSection.scrollIntoView({ behavior: "smooth" });
   moveFocus(contactSection); 
 });
 
-footerButton.addEventListener("click", () => {
+footerButton.addEventListener("click", (e) => {
+  e.preventDefault();
   commonRoom.scrollIntoView({ behavior: "smooth" });
   moveFocus(commonRoom); 
 });
