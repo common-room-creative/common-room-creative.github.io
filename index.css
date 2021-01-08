@@ -14,7 +14,7 @@
   --text-heading: "Rubik", sans-serif;
   --text-copy: "Lato", sans-serif;
   /* layout spacing */
-  --margin: 1rem;
+  --margin: .5rem;
   --modifier: calc(40rem - 100%);
 }
 
