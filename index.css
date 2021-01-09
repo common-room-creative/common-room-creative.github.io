@@ -283,7 +283,7 @@ header {
   margin-top: 4rem; 
 }
 
-.contact-form label:before { 
+.contact-form label::after { 
   content: "*"; 
   color: var(--color-secondary); 
 }
