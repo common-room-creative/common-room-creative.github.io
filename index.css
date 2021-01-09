@@ -160,7 +160,7 @@ header {
   color: var(--color-text-secondary);
 }
 
-.process #understand h3::before {
+.process #understand::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f109";
@@ -168,7 +168,7 @@ header {
   padding: 1rem 1rem 1rem 0;
 }
 
-.process #ideate h3::before {
+.process #ideate::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f53f";
@@ -176,7 +176,7 @@ header {
   padding: 1rem 1rem 1rem 0;
 }
 
-.process #test h3::before {
+.process #test::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f121";
@@ -281,6 +281,11 @@ header {
   color: var(--color-text);
   font-family: var(--text-copy);
   margin-top: 4rem; 
+}
+
+.contact-form label:before { 
+  content: "*"; 
+  color: var(--color-secondary); 
 }
 
 .contact-form input {
