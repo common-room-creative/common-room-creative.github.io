@@ -136,7 +136,8 @@ header {
   text-decoration: none;
 }
 
-.move-focus:hover {
+.move-focus:hover,
+.move-focus:focus {
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);
   transition: 152ms;
@@ -271,7 +272,8 @@ header {
   text-decoration: none; 
  }
 
- .contact-details a:hover { 
+ .contact-details a:hover,
+ .contact-details a:focus { 
    color: var(--color-text-secondary);
    text-decoration: underline; 
  }
@@ -333,7 +335,8 @@ textarea::placeholder {
   cursor: pointer; 
 }
 
-.contact-form button:hover { 
+.contact-form button:hover, 
+.contact-form button:focus{ 
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);
   transition: 152ms;
