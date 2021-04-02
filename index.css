@@ -250,6 +250,10 @@ header {
   padding: 3rem 6vw;
 }
 
+.contact-wrapper { 
+  margin: 0 auto; 
+ }
+
 .contact .section-wrapper > * {
   flex-grow: 1;
   flex-basis: calc(var(--modifier) * 999);
